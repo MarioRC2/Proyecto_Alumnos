@@ -1,0 +1,10 @@
+body {
+   overflow-y: hidden;
+   background-image: radial-gradient(circle, #050737, #023266, #005c95, #008bc2, #12bceb);
+}
+
+.bg {
+    background-image: url(/image/Login.jpg);
+    background-position: center center;
+  }
+  
