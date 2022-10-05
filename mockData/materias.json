@@ -1,0 +1,22 @@
+[
+    {
+      "id":1,
+      "name":"Matematicas"
+    },
+    {
+      "id":2,
+      "name":"Espaniol"
+    },
+    {
+      "id":3,
+      "name":"Geografia"
+    },
+    {
+      "id":4,
+      "name":"Ciencias Naturales"
+    },
+    {
+      "id":5,
+      "name":"Civismo"
+    }
+]

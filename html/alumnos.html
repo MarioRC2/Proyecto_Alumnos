@@ -22,23 +22,75 @@
           <form id="add-user-form" class="p-2" novalidate>
             <div class="row mb-3 gx-3">
               <div class="col">
-                <input type="text" name="fname" class="form-control form-control-lg" placeholder="Nombre" required>
+                <input 
+                  type="text" 
+                  id="name"
+                  name="fname" 
+                  class="form-control form-control-lg" 
+                  placeholder="Nombre" 
+                  required
+                />
                 <div class="invalid-feedback">Nombre es Requerido!</div>
               </div>
 
               <div class="col">
-                <input type="text" name="lname" class="form-control form-control-lg" placeholder="Apellido" required>
+                <input 
+                  id="lastName"
+                  type="text" 
+                  name="lname" 
+                  class="form-control form-control-lg" 
+                  placeholder="Apellido" 
+                  required
+                />
                 <div class="invalid-feedback">Apellido es Requerido!</div>
               </div>
             </div>
 
             <div class="mb-3">
-              <input type="email" name="email" class="form-control form-control-lg" placeholder="Edad" required>
+              <input 
+                id="age"
+                type="number" 
+                name="age" 
+                class="form-control form-control-lg" 
+                placeholder="Edad" 
+                required
+              />
               <div class="invalid-feedback">Edad es Requerido!</div>
             </div>
 
             <div class="mb-3">
               <input type="submit" value="Añadir Alumno" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Assign Course to Student -->
+  <div class="modal fade" tabindex="-1" id="assignCourseToStudent">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Asignar Materia Estudiante</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="course-user-form" class="p-2" novalidate>
+            <div class="row mb-3 gx-3">
+              <div class="col">
+                <select id="students">
+                </select>
+                <div class="invalid-feedback">Nombre es Requerido!</div>
+              </div>
+              <div class="col">
+                <select id="courses">
+                </select>
+                <div class="invalid-feedback">Apellido es Requerido!</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="submit" value="Asignar Materia" class="btn btn-primary btn-block btn-lg" id="assign-user-btn">
             </div>
           </form>
         </div>
@@ -91,12 +143,14 @@
         </div>
         <div>
           <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addNewUserModal">Añadir Alumno</button>
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#assignCourseToStudent">Asignar Materia</button>
         </div>
     <div>
         <div class="container-fluid">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form id="search-student" class="d-flex" role="search">
+              <input id='search-value' class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
+              <button id='clean-search' class="btn btn-outline-success" type="button">Clean</button>
             </form>
           </div>
         
@@ -116,14 +170,14 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nombre</th>
+                <th id="order-by-name">Nombre (asc)</th>
                 <th>Apellido</th>
                 <th>Edad</th>
                 <th>Materia</th>
                 <th>Calificacion</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="studentTable">
             </tbody>
           </table>
         </div>
@@ -132,5 +186,5 @@
   </div>
 </body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
-
+<script src="../js/alumnos.js"></script>
 </html>
